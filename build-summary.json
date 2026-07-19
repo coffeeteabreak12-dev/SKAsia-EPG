@@ -1,0 +1,46 @@
+{
+  "m240730254672129": {
+    "live": 3514,
+    "movie": 9580,
+    "series": 25970,
+    "other": 0,
+    "total": 39064,
+    "file_size_mb": 13.44,
+    "examples": [
+      {
+        "name": "Astro Badminton HD s",
+        "stream_id": "51603"
+      },
+      {
+        "name": "SUPER Sports  CH11(HK)",
+        "stream_id": "49792"
+      },
+      {
+        "name": "SUPER \u734e\u9580\u4eba  CH02(HK)",
+        "stream_id": "49791"
+      }
+    ]
+  },
+  "m240730582462128": {
+    "live": 3514,
+    "movie": 9580,
+    "series": 25970,
+    "other": 0,
+    "total": 39064,
+    "file_size_mb": 13.44,
+    "examples": [
+      {
+        "name": "Astro Badminton HD s",
+        "stream_id": "51603"
+      },
+      {
+        "name": "SUPER Sports  CH11(HK)",
+        "stream_id": "49792"
+      },
+      {
+        "name": "SUPER \u734e\u9580\u4eba  CH02(HK)",
+        "stream_id": "49791"
+      }
+    ]
+  }
+}
