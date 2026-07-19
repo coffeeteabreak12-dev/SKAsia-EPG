@@ -1,0 +1,14 @@
+UPLOAD CHECKLIST
+
+1. Extract SKAsia-EPG-GitHub.zip.
+2. On GitHub, create a PUBLIC repository named SKAsia-EPG.
+3. Upload the CONTENTS of the extracted folder, not the outer folder itself.
+4. Confirm these items are visible:
+   - .github/workflows/update-epg.yml
+   - scripts/build_epg.py
+   - output/
+   - README.md
+5. Commit the files.
+6. Open Actions > Update SKAsia EPG > Run workflow.
+7. Enable Settings > Pages > Deploy from a branch > main > /(root).
+8. Copy the two Pages URLs from README.md into IPTVX.
