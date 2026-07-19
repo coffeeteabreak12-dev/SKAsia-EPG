@@ -1,18 +1,19 @@
+SKAsia Xtream Stream-ID EPG v5
 Downloaded feeds: 28
-Source XMLTV channels indexed: 0
+Source channels indexed: 0
 Failed feeds: 4
 
 Account: m240730254672129
-SKAsia live channels: 3514
+Live channels: 3514
 Matched channels: 0
 Unmatched channels: 3514
-Written programme entries: 0
+Programme entries written: 0
 
 Account: m240730582462128
-SKAsia live channels: 3514
+Live channels: 3514
 Matched channels: 0
 Unmatched channels: 3514
-Written programme entries: 0
+Programme entries written: 0
 
 Feed errors:
 TW1: HTTP Error 404: Not Found
