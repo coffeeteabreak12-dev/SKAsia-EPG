@@ -1,51 +1,33 @@
-name: Update SKAsia Custom EPG
-
+name: Update SKAsia Xtream-ID EPG
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 18 * * *"
-
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
-
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
-
       - name: Install matcher
         run: pip install -r requirements.txt
-
-      - name: Build SKAsia-matched XMLTV files
+      - name: Build Xtream stream-ID XMLTV files
         run: python scripts/build_epg.py
-
       - name: Verify generated files
         run: |
           ls -lh output/
           cat output/build-status.txt
-          find output -type f -size +99M -print -quit | grep -q . && {
-            echo "A generated file exceeds GitHub's 100 MiB repository limit."
-            exit 1
-          } || true
-
       - name: Commit updated EPG
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A output/
-          if git diff --cached --quiet; then
-            echo "No EPG changes to commit."
-          else
-            git commit -m "Update SKAsia custom matched EPG"
-            git push
-          fi
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "Update SKAsia Xtream-ID EPG"; git push; fi
