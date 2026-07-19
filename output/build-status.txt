@@ -1,0 +1,4 @@
+Successful feeds: 28
+Failed feeds: TW1, BD1, CN1, KZ1
+Unique channel IDs: 8310
+Programme entries: 787615
