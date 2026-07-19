@@ -72,18 +72,22 @@ def main() -> int:
     tree = ET.ElementTree(root)
     ET.indent(tree, space="  ")
 
-    primary = OUTPUT / ACCOUNT_OUTPUTS[0]
-    tree.write(primary, encoding="utf-8", xml_declaration=True)
+    # Write XML into memory, then store only compressed .xml.gz files.
+    # GitHub rejects normal repository files larger than 100 MiB.
+    xml_buffer = io.BytesIO()
+    tree.write(xml_buffer, encoding="utf-8", xml_declaration=True)
+    xml_bytes = xml_buffer.getvalue()
 
-    # Both SKAsia accounts have the same channel catalogue, so their EPG data is identical.
-    second = OUTPUT / ACCOUNT_OUTPUTS[1]
-    shutil.copyfile(primary, second)
-
-    # Compressed copies are useful when the XML becomes large.
     for filename in ACCOUNT_OUTPUTS:
-        source = OUTPUT / filename
-        with source.open("rb") as src, gzip.open(str(source) + ".gz", "wb", compresslevel=9) as dst:
-            shutil.copyfileobj(src, dst)
+        compressed_path = OUTPUT / f"{filename}.gz"
+        with gzip.open(compressed_path, "wb", compresslevel=9) as target:
+            target.write(xml_bytes)
+
+    # Remove old uncompressed XML files left by earlier workflow versions.
+    for filename in ACCOUNT_OUTPUTS:
+        uncompressed_path = OUTPUT / filename
+        if uncompressed_path.exists():
+            uncompressed_path.unlink()
 
     status = OUTPUT / "build-status.txt"
     status.write_text(

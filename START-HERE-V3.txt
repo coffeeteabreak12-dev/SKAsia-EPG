@@ -1,0 +1,28 @@
+SKASIA EPG V3 — FIX FOR GITHUB 100 MiB ERROR
+
+The previous workflow successfully built the guide, but GitHub rejected the push because
+an uncompressed XML file was about 504 MB. GitHub repositories reject individual files
+larger than 100 MiB.
+
+This version:
+- stores only compressed .xml.gz files;
+- removes the oversized uncompressed .xml files;
+- uses current Node 24-compatible GitHub actions;
+- checks generated file sizes before pushing.
+
+REPLACE THESE TWO FILES IN YOUR REPOSITORY:
+1. scripts/build_epg.py
+2. .github/workflows/update-epg.yml
+
+EASIEST WORKFLOW REPLACEMENT:
+Actions > Update SKAsia EPG > Workflow file > edit pencil
+Replace everything with UPDATE-EPG-WORKFLOW-COPY.yml from this package.
+
+Then replace scripts/build_epg.py through the Code tab.
+
+After committing both changes:
+Actions > Update SKAsia EPG > Run workflow
+
+The final IPTVX URLs will end in .xml.gz:
+https://coffeeteabreak12-dev.github.io/SKAsia-EPG/output/skasia-m240730254672129-epg.xml.gz
+https://coffeeteabreak12-dev.github.io/SKAsia-EPG/output/skasia-m240730582462128-epg.xml.gz
