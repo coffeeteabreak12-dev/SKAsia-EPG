@@ -1,0 +1,49 @@
+SKASIA EPG PACKAGE V2 — SIMPLE SETUP
+
+This package includes BOTH:
+1. The required hidden GitHub workflow:
+   .github/workflows/update-epg.yml
+2. A visible backup copy:
+   UPDATE-EPG-WORKFLOW-COPY.yml
+
+BEST METHOD
+
+A. Upload normal files
+1. Create or open your GitHub repository named SKAsia-EPG.
+2. Upload these visible folders/files:
+   - scripts
+   - output
+   - README.md
+   - UPLOAD_CHECKLIST.txt
+   - UPDATE-EPG-WORKFLOW-COPY.yml
+3. Commit changes.
+
+B. Create the workflow directly on GitHub
+1. Open the repository's Actions tab.
+2. Click “set up a workflow yourself”.
+3. Delete the sample content.
+4. Open UPDATE-EPG-WORKFLOW-COPY.yml from the repository.
+5. Copy all its contents.
+6. Paste into the workflow editor.
+7. Set the filename to:
+   update-epg.yml
+8. Commit the workflow.
+
+GitHub automatically stores it under:
+.github/workflows/update-epg.yml
+
+C. Run it
+1. Open Actions.
+2. Select “Update SKAsia EPG”.
+3. Click “Run workflow”.
+4. Click the green “Run workflow” button.
+5. Wait for a green check mark.
+
+D. Enable GitHub Pages
+1. Settings > Pages.
+2. Deploy from a branch.
+3. Branch: main.
+4. Folder: /(root).
+5. Save.
+
+This approach avoids relying on macOS Finder showing the hidden .github folder.
