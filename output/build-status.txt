@@ -1,7 +1,7 @@
 SKAsia Xtream Stream-ID EPG v5
-Downloaded feeds: 29
+Downloaded feeds: 28
 Source channels indexed: 0
-Failed feeds: 3
+Failed feeds: 4
 
 Account: m240730254672129
 Live channels: 3514
@@ -16,6 +16,7 @@ Unmatched channels: 3514
 Programme entries written: 0
 
 Feed errors:
+IN1: Remote end closed connection without response
 TW1: HTTP Error 404: Not Found
 BD1: HTTP Error 404: Not Found
 CN1: HTTP Error 404: Not Found
